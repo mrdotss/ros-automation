@@ -1,19 +1,21 @@
 [![Supported python versions](https://img.shields.io/pypi/pyversions/napalm-ros.svg)](https://pypi.python.org/pypi/napalm-ros/)
 # ros-automation
-Automation for RouterOS based by napalm-ros
+Automation for RouterOS<br>
+What is dis? this project help you to use napalm-ros package without too much coding, 
+so you can just run the file and ready to command your MikroTik. Since this project used napalm-ros package, you can learn how to use the package.<br>
 
-You need to replace Node info with your own in `stuff/baka` module
+Note: You need to replace Node info with your own in `stuff/baka` module
 
 ### Getting started
-firs you need to install napalm-ros packages
+first you need to install napalm-ros packages
 
 python 3.x</br>
 `$ pip3 install napalm`<br>
 `$ pip3 install napalm-ros`
 
-Enable api in mikrotik<br>
+Enable api in your mikrotik<br>
 ![MikroTik API](https://i.imgur.com/77luieJ.png)<br>
-`IP - Services` mark sure to enable `api` section.
+`IP - Services` mark sure to enable `api` section, also you can use api-ssl for secure connection.
 
 ### How to use
 run the python file and you'll see list of method.<br>
@@ -27,4 +29,5 @@ run the python file and you'll see list of method.<br>
 * ping
 
 update soon for more feature.<br>
-also you can read more about napalm-ros packages [napalm-ros](https://github.com/napalm-automation-community/napalm-ros)
+Read more about
+[napalm-ros repository](https://github.com/napalm-automation-community/napalm-ros) and [napalm-ros site](https://napalm.readthedocs.io/en/yang_doc/support/index.html)
