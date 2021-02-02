@@ -1,0 +1,20 @@
+{
+   "1": " Get device info",
+   "2": " Get interface info",
+   "3": " Get interface IP",
+   "4": " Get NTP server",
+   "5": " Get SNMP Info",
+   "6": " Get user info",
+   "7": " Get IPv6 neighbors table",
+   "8": " Still connected?",
+   "9": " Ping someone",
+   "10": "Get LLDP neighbors",
+   "11": "Get LLDP neighbors detail",
+   "12": "Get network instances",
+   "13": "Get MAC address table",
+   "14": "Get BGP neighbors",
+   "15": "Get BGP neighbors detail",
+   "16": "Get ARP table",
+   "17": "Get interface status",
+   "18": "Get environment status"
+}
