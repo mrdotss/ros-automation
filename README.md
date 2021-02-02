@@ -15,6 +15,10 @@ Enable api in mikrotik<br>
 ![MikroTik API](https://i.imgur.com/77luieJ.png)<br>
 `IP - Services` mark sure to enable `api` section.
 
+### How to use
+run the python file and you'll see list of method.<br>
+`$ python3 base.py`
+
 ### Implemented getters works in this project
 * get_facts
 * get_interfaces
