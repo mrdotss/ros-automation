@@ -39,18 +39,6 @@ def DEV_get_interfaces_ip():
 			for ip, subnet in ip_info.items():
 				print(f" {ipv} - {ip}/{subnet['prefix_length']}")
 
-def DEV_get_ntp_servers():
-	print("")
-
-def DEV_get_snmp_information():
-	print("")
-
-def DEV_get_users():
-	print("")
-
-def DEV_get_ipv6_neighbors_table():
-	print("")
-
 def DEV_is_alive():
 	print("\nDevice Status:")
 	for key, value in device.is_alive().items():
@@ -70,27 +58,3 @@ def DEV_ping():
 			recv = abs(rec_loss - rec_probes)
 		print(f"\nInfo packets send:\n   Sent: {success_info['probes_sent']}, Received: {recv}, Lost: {success_info['packet_loss']}%")
 		print(f"RTT (round-trip delay) info:\n   Max: {success_info['rtt_max']}ms, Min: {success_info['rtt_min']}ms, Avg: {success_info['rtt_avg']}ms, StdDev: {success_info['rtt_stddev']}ms")
-
-def DEV_get_lldp_neighbors():
-	print("")
-
-def DEV_get_lldp_neighbors_detail():
-	print("")
-
-def DEV_get_network_instances():
-	print("")
-
-def DEV_get_mac_address_table():
-	print("")
-
-def DEV_get_bgp_neighbors():
-	print("")
-
-def DEV_get_bgp_neighbors_detail():
-	print("")
-
-def DEV_get_interfaces_counters():
-	print("")
-
-def DEV_get_environment():
-	print("")
