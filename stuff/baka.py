@@ -8,7 +8,6 @@ router_port = 8728 # Use 8729 for api-ssl
 router_user = 'your_username'
 router_pass = 'your_password'
 
-
 # Use the RouterOS (ros) network driver to connect to the device:
 driver = napalm.get_network_driver('ros')
 print('\nConnecting to', router_ip, "with port", router_port)
@@ -38,6 +37,34 @@ def DEV_get_interfaces_ip():
 		for ipv, ip_info in value_interface.items():
 			for ip, subnet in ip_info.items():
 				print(f" {ipv} - {ip}/{subnet['prefix_length']}")
+
+def DEV_get_ntp_servers():
+	print("\nList server of NTP client:")
+	ct = 1
+	for key, value in device.get_ntp_servers().items():
+		print(f"{ct}. {key}")
+		ct += 1
+
+def DEV_get_snmp_information():
+	print("\nSNMP info:")
+	for key, value in device.get_snmp_information().items():
+		if key == "community":
+			for key_com, value_com in key['community'].items():
+				print(f"{key_com}: {value_com}")
+		print(f"{key}: {value}")
+
+def DEV_get_users():
+	print("\nUsers info:")
+	for key, value in device.get_users().items():
+		print(f"\nUsername = {key}")
+		for user, info in value.items():
+			print(f"  {user}: {info}")
+
+def DEV_get_ipv6_neighbors_table():
+	print("\nIPv6 neighbors info:")
+	for info in device.get_ipv6_neighbors_table():
+		for key, value in info.items():
+			print(f"{key}: {value}")
 
 def DEV_is_alive():
 	print("\nDevice Status:")
