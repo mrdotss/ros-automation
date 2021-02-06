@@ -27,6 +27,9 @@ run the python file and you'll see list of method.<br>
 * get_interfaces_ip
 * is_alive
 * ping
+* get_ipv6_neighbors_table
+* get_snmp_information
+* get_ntp_servers
 
 update soon for more feature.<br>
 Read more about
