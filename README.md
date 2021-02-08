@@ -30,6 +30,7 @@ run the python file and you'll see list of method.<br>
 * get_ipv6_neighbors_table
 * get_snmp_information
 * get_ntp_servers
+* get_lldp_neighbors_detail
 
 update soon for more feature.<br>
 Read more about
