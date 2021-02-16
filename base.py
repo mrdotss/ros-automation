@@ -15,10 +15,10 @@ command_list = {
    "11": "b.DEV_get_lldp_neighbors_detail()",
    "12": "b.device.get_network_instances()",
    "13": "b.device.get_mac_address_table()",
-   "14": "b.device.get_bgp_neighbors()",
+   "14": "b.DEV_get_bgp_neighbors()",
    "15": "b.device.get_bgp_neighbors_detail()",
-   "16": "b.device.get_arp_table()",
-   "17": "b.device.get_interfaces_counters()",
+   "16": "b.DEV_get_arp_table()",
+   "17": "b.DEV_get_interfaces_counters()",
    "18": "b.device.get_environment()"
 }
 

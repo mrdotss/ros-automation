@@ -31,6 +31,9 @@ run the python file and you'll see list of method.<br>
 * get_snmp_information
 * get_ntp_servers
 * get_lldp_neighbors_detail
+* get_interfaces_counters
+* get_arp_table
+* get_bgp_neighbors
 
 update soon for more feature.<br>
 Read more about

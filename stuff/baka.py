@@ -115,3 +115,73 @@ for key, value in device.get_lldp_neighbors_detail().items():
 				print("[Remote]")
 				continue
 			print(f"  {key_info}: {value_info}")
+
+def DEV_get_bgp_neighbors():
+	print("\nBGP neighbors info:")
+	for key, value in device.get_bgp_neighbors().items():
+		print(f"{key}")
+		for bgp_info, bgp_value in value.items():
+			print(f"  {bgp_info}: {bgp_value}")
+
+def DEV_get_arp_table():
+	print("\nARP table:")
+	for info in device.get_arp_table():
+		print()
+		for key, value in info.items():
+			if key == "interface":
+				key = "Interface"
+				print(f"{key}: {value}")
+				continue
+			print(f"  {key}: {value}")
+
+def DEV_get_interfaces_counters():
+
+	def all_iface_counters():
+		all_ct = 1
+		all_iface_list = {}
+		print("\nInterface status:")
+		for iface_key_temp, value in device.get_interfaces_counters().items():
+			print(f"[{all_ct}] Interface: {iface_key_temp}")
+			all_iface_list[all_ct] = iface_key_temp
+			all_ct += 1
+			for ct_key, ct_value in value.items():
+				print(f"  {ct_key}: {ct_value}")
+			print()
+
+	#Database and Count ID for interface list	
+	ct = 1
+	iface_list = {}
+	for iface_ct, value in device.get_interfaces_counters().items():
+		iface_list[ct] = iface_ct
+		ct += 1
+
+	#Loop for asking interface counters
+	# while True:
+
+	#Print interface list
+	ctr = 1
+	print("\nInterface list:")
+	for key_ex, value_temp in iface_list.items():
+		print(f"{key_ex}. {value_temp}")
+		ctr += 1
+	print(f"{ctr}. All interface")
+	# print(f"{ctr+1}. Back to home")
+
+	ask = int(input("\nSelect interface: "))
+	Pout = False
+
+	#ID from api
+	for iface_key, iface_value in device.get_interfaces_counters().items():
+		#ID from iface_list data
+		for key_temp, value_temp in iface_list.items():
+			#Finding interface as selected KEY
+			if ask == ct and not Pout:
+				all_iface_counters()
+				Pout = True
+				break		
+			elif value_temp == iface_key and iface_list[ask] == iface_key and ask == key_temp:
+				print(f"\nInterface: {iface_key}")
+				for ct_key, ct_value in iface_value.items():
+					print(f"  {ct_key} {ct_value}")
+			elif ask+1 == ct + 1:
+				break
